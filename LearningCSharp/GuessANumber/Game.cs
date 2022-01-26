@@ -21,9 +21,9 @@ public class Game
         _gameState.Reset();
         while (!_gameState.IsTerminal())
         {
-            Action action = player.Think(_gameState);
+            Action action = player.Think(_gameState);                          // player selects an action
             Console.WriteLine("Player select action: " + action.ToString());
-            int reward = _forwardModel.Play(_gameState, action);
+            int reward = _forwardModel.Play(_gameState, action);               // Play the action
             switch (reward)
             {
                 case -1:
@@ -39,6 +39,5 @@ public class Game
         }
         if (!_gameState.IsPlayerWon())
             Console.WriteLine("I'm sorry, you didn't guess the number.");
-
     }
 }
