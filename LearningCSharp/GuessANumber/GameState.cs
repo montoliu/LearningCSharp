@@ -10,8 +10,8 @@ public class GameState
     private bool _playerWon;
     public GameState()
     {
-        _maxNumberToGuess = 100;
-        _maxTries = 10;
+        _maxNumberToGuess = 10;
+        _maxTries = 5;
         
         _playerWon = false;
         _try  = 1;

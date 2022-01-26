@@ -10,8 +10,12 @@ public class Player
         List<Action> listActions = gs.GetAllPossibleActions();
         
         Console.WriteLine("List of possible actions to be played:");
-        for (int i=1; i<=listActions.Count; i++)
-            Console.WriteLine("Action " + i + " -> " + listActions[i-1].ToString());
+        int i = 1;
+        foreach (var action in listActions)
+        {
+            Console.WriteLine("Action " + i + " -> " + action.ToString());
+            i += 1;
+        }
         
         Console.WriteLine("Select the action to be played:");
         String s = Console.ReadLine(); 
