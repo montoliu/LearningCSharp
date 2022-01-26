@@ -2,30 +2,43 @@
 
 public class Game
 {
-    private GameState    _game_state;
-    private ForwardModel _forward_model;
+    private GameState    _gameState;      // state of the game
+    private ForwardModel _forwardModel;   // rules of the game
 
-    public Game(int maxNumberToGuess, int maxIterations)
+    public Game(int maxNumberToGuess, int maxTries)
     {
-        _game_state    = new GameState();
-        _forward_model = new ForwardModel();
+        _gameState    = new GameState();
+        _forwardModel = new ForwardModel();
 
-        _game_state.SetMaxNumberToGuess(maxNumberToGuess);
-        _game_state.SetMaxIterations(maxIterations);
+        _gameState.SetMaxNumberToGuess(maxNumberToGuess);
+        _gameState.SetMaxTries(maxTries);
     }
 
     public void Run(Player player)
     {
-        Console.WriteLine("Let's play to Guess a Number between 1 and " + _game_state.GetMaxNumberToGuess() + " !");
+        Console.WriteLine("Let's play to Guess a Number between 1 and " + _gameState.GetMaxNumberToGuess() + "!");
 
-        _game_state.reset();
-        int max_iter = 10;, 
-        String s = new String("");
-        int    n;
-        while (!_game_state.isTerminal())
+        _gameState.Reset();
+        while (!_gameState.IsTerminal())
         {
-            Action action = player.Think(_game_state);
-            _forward_model.Play(_game_state, action);
+            Action action = player.Think(_gameState);
+            Console.WriteLine("Player select action: " + action.ToString());
+            int reward = _forwardModel.Play(_gameState, action);
+            switch (reward)
+            {
+                case -1:
+                    Console.WriteLine("You failed, the number is smaller. Number of remaining tries: " + _gameState.GetRemainingTries());
+                    break;
+                case 1:
+                    Console.WriteLine("You failed, the number is greater. Number of remaining tries: " + _gameState.GetRemainingTries());
+                    break;
+                default:
+                    Console.WriteLine("Congratulations, you guessed the number after " + _gameState.GetTry() + " tries");
+                    break;
+            }
         }
+        if (!_gameState.IsPlayerWon())
+            Console.WriteLine("I'm sorry, you didn't guess the number.");
+
     }
 }

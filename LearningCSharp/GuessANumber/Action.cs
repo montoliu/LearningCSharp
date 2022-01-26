@@ -9,12 +9,12 @@ public class Action
         _number = number;
     }
 
-    public int GetNumber() max_number_to_guess = 100;                                      
+    public int GetNumber()                              
     {
         return _number;
     }
 
-    public String ToString()
+    public override String ToString()
     {
         return Convert.ToString(_number);
     }

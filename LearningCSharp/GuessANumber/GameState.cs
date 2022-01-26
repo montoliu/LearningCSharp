@@ -2,48 +2,101 @@
 
 public class GameState
 {
-    private int  _number_to_guess;
-    private int  _max_number_to_guess;
-    private int  _max_interations;
-    private int  _iteration;
-    private bool _player_won;
+    private int  _maxNumberToGuess;
+    private int  _maxTries;
+
+    private int  _numberToGuess;
+    private int  _try;
+    private bool _playerWon;
     public GameState()
-    {ameayeraeayer
-        _player_won = false;
-        _iteration  = 1;
+    {
+        _maxNumberToGuess = 100;
+        _maxTries = 10;
+        
+        _playerWon = false;
+        _try  = 1;
+    }
+    
+    // Getters and Setters
+    public int GetMaxNumberToGuess()
+    {
+        return _maxNumberToGuess;
+    }
+    
+    public int GetMaxTries()
+    {
+        return _maxTries;
     }
 
+    public int GetTry()
+    {
+        return _try;
+    }
+
+    public int GetRemainingTries()
+    {
+        return _maxTries - _try + 1;
+    }
+    
+    public void SetMaxNumberToGuess(int maxNumberToGuess)
+    {
+        _maxNumberToGuess = maxNumberToGuess;
+    }
+
+    public void SetMaxTries(int maxTries)
+    {
+        _maxTries = maxTries;
+    }    
+
+    // Return the list of all possible actions to be played
     public List<Action> GetAllPossibleActions()
     {
         List<Action> l = new List<Action>();
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 1; i <= _maxNumberToGuess; i++)
         {
-            Action a = new Action(i);
-            l.Add(a);
+            Action action = new Action(i);
+            l.Add(action);
         }
 
         return l;
     }
 
-    public void reset()
+    public void Reset()
     {
         Random random = new Random();
-        _number_to_guess = random.Next(_max_number_to_guess) + 1;
+        _numberToGuess = random.Next(_maxNumberToGuess) + 1;
+        _playerWon = false;
+        _try  = 1;
     }
 
-    public int GetMaxNumberToGuess()
+    // Return true if the player won of if the max number of tries has been reached
+    public bool IsTerminal()
     {
-        return _max_number_to_guess;
+        return _playerWon || _try > _maxTries;
     }
 
-    public void SetMaxNumberToGuess(int max_number_to_guess)
+    public int CompareWithTheNumber(int guess)
     {
-        _max_number_to_guess = max_number_to_guess;
+        if (_numberToGuess < guess)
+            return -1;
+        if (_numberToGuess > guess)
+            return 1;
+        return 0;
     }
 
-    public bool isTerminal()
+    public void IncrementTries()
     {
-        return _player_won;
+        _try += 1;
+    }
+
+    public void PlayerWon()
+    {
+        _playerWon = true;
+    }
+
+    public bool IsPlayerWon()
+    {
+        return _playerWon;
     }
 }
