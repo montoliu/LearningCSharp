@@ -22,7 +22,7 @@ public class Game
         while (!_gameState.IsTerminal())
         {
             Action action = player.Think(_gameState);                          // player selects an action
-            Console.WriteLine("Player select action: " + action.ToString());
+            Console.WriteLine("Player selected action: " + action.ToString());
             int reward = _forwardModel.Play(_gameState, action);               // Play the action
             switch (reward)
             {

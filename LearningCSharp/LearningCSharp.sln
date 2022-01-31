@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessANumber", "GuessANumber\GuessANumber.csproj", "{3B801E28-E059-4EEC-B819-A86A43D845A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{97E88DD7-7D22-49CD-AEB5-4AF378D3B372}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3B801E28-E059-4EEC-B819-A86A43D845A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B801E28-E059-4EEC-B819-A86A43D845A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B801E28-E059-4EEC-B819-A86A43D845A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E88DD7-7D22-49CD-AEB5-4AF378D3B372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E88DD7-7D22-49CD-AEB5-4AF378D3B372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E88DD7-7D22-49CD-AEB5-4AF378D3B372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E88DD7-7D22-49CD-AEB5-4AF378D3B372}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
