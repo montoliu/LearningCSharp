@@ -2,7 +2,7 @@
 
 public class Action
 {
-    private int _number;
+    private int _number;        // The number that the player think that it is the correct one
 
     public Action(int number)
     {

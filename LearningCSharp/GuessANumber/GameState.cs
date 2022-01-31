@@ -1,11 +1,12 @@
 ﻿namespace GuessANumber;
 
+// Stores the state of the game
 public class GameState
 {
     private int  _maxNumberToGuess;
     private int  _maxTries;
 
-    private int  _numberToGuess;
+    private int  _numberToGuess;  // This must be hidden for players
     private int  _try;
     private bool _playerWon;
     public GameState()
@@ -48,7 +49,7 @@ public class GameState
         _maxTries = maxTries;
     }    
 
-    // Return the list of all possible actions to be played
+    // Returns the list of all possible actions to be played
     public List<Action> GetAllPossibleActions()
     {
         List<Action> l = new List<Action>();
@@ -62,6 +63,7 @@ public class GameState
         return l;
     }
 
+    // Initialize the state
     public void Reset()
     {
         Random random = new Random();
@@ -70,7 +72,7 @@ public class GameState
         _try  = 1;
     }
 
-    // Return true if the player won of if the max number of tries has been reached
+    // Return true if the player won or if the max number of tries has been reached
     public bool IsTerminal()
     {
         return _playerWon || _try > _maxTries;
