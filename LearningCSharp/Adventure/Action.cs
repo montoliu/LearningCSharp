@@ -2,37 +2,32 @@
 
 public class Action
 {
-    private string _direction;
+    private string _position;
 
-    public Action(string direction)
+    public Action(string position)
     {
-        _direction = direction;
-    }
-
-    public string GetDirection()
-    {
-        return _direction;
+        _position = position;
     }
     
     public bool IsU()
     {
-        return _direction == "U";
+        return _position == "U";
     }
     public bool IsR()
     {
-        return _direction == "R";
+        return _position == "R";
     }
     public bool IsD()
     {
-        return _direction == "D";
+        return _position == "D";
     }
     public bool IsL()
     {
-        return _direction == "L";
+        return _position == "L";
     }
 
     public override string ToString()
     {
-        return _direction;
+        return _position;
     }
 }

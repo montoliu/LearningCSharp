@@ -28,7 +28,8 @@ public class GameState
     {
         return _state == 1 || _state == -1;
     }
-    public string GetMessage()
+    
+    public override string ToString()
     {
         string str = "";
         switch (_state)
@@ -40,67 +41,67 @@ public class GameState
                 str = "You die!";
                 break;
             case 0: 
-                str = "URD";
+                str = "Text state 0 (URD)";
                 break;
             case 2: 
-                str = "URDL";
+                str = "Text state 2 (URDL)";
                 break;
             case 3:
-                str = "DL";
+                str = "Text state 3 (DL)";
                 break;
             case 4: 
-                str = "URD";
+                str = "Text state 4 (URD)";
                 break;
             case 5:
-                str = "URL";
+                str = "Text state 5 (URL)";
                 break;
             case 6:
-                str = "UDL";
+                str = "Text state 6 (UDL)";
                 break;
             case 7:
-                str = "RD";
+                str = "Text state 7 (RD)";
                 break;
             case 8:
-                str = "URDL";
+                str = "Text state 8 (URDL)";
                 break;
             case 9:
-                str = "RD";
+                str = "Text state 9 (RD)";
                 break;
             case 10: 
-                str = "UDL";
+                str = "Text state 10 (UDL)";
                 break;
             case 11:
-                str = "URL";
+                str = "Text state 11 (URL)";
                 break;
             case 12: 
-                str = "UDL";
+                str = "Text state 12 (UDL)";
                 break;
             case 13: 
-                str = "URD";
+                str = "Text state 13 (URD)";
                 break;
             case 14:
-                str = "UPL";
+                str = "Text state 14 (UPL)";
                 break;
             case 15:
-                str = "RDL";
+                str = "Text state 15 (RDL)";
                 break;
             case 16: 
-                str = "UDL";
+                str = "Text state 16 (UDL)";
                 break;
             case 17:
-                str = "UR";
+                str = "Text state 17 (UR)";
                 break;
             case 18:
-                str = "RDL";
+                str = "Text state 18 (RDL)";
                 break;
             case 19:
-                str = "UR";
+                str = "Text state 19 (UR)";
                 break;
             case 20:
-                str = "URDL";
+                str = "Text state 20 (URDL)";
                 break;
             case 21:
-                str = "URD";
+                str = "Text state 21 (URD)";
                 break;
         }
 

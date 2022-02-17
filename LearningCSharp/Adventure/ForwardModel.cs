@@ -89,10 +89,8 @@ public class ForwardModel
         else if (gs.GetState() == 21 && action.IsR()) gs.SetState(1);
         else if (gs.GetState() == 21 && action.IsD()) gs.SetState(-1);
 
-        if (gs.GetState() == 1)
-            return 1;
-        if (gs.GetState() == -1)
-            return -1;
+        if (gs.GetState() == 1)  return 1;
+        if (gs.GetState() == -1) return -1;
         return 0;
     }
 }

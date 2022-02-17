@@ -16,11 +16,11 @@ public class Game
         _gameState.Reset();
         while (!_gameState.IsTerminal())
         {
-            Console.WriteLine("\n" + _gameState.GetMessage());
+            Console.WriteLine("\n" + _gameState);
             Action action = player.Think(_gameState);                          // player selects an action
             Console.WriteLine("Player selected action: " + action.ToString());
             int reward = _forwardModel.Play(_gameState, action);               // Play the action
         }
-        Console.WriteLine(_gameState.GetMessage());
+        Console.WriteLine(_gameState);
     }
 }
