@@ -1,11 +1,8 @@
 ﻿namespace GamePlatform;
 
-public class Player
+public class HumanPlayer : iPlayer
 {
-    public Player()
-    { }
-
-    public Action Think(GameState gs)
+    public Action Think(iGameState gs)
     {
         // Get all the possible actions to be played
         List<Action> listActions = gs.GetAllPossibleActions();

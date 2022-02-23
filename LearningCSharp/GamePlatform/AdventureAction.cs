@@ -2,7 +2,7 @@
 
 public class AdventureAction: Action
 {
-    private string _position;
+    private string _position;     // "U", "R", "D" or "L"
 
     public AdventureAction(string position)
     {

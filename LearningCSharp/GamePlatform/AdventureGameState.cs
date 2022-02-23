@@ -169,4 +169,9 @@ public class AdventureGameState: iGameState
     {
         _state = state;
     }
+
+    public string GetRewardInformation(int reward)
+    {
+        return "";
+    }
 }

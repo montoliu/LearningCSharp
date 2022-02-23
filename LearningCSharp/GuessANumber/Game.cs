@@ -5,12 +5,19 @@ public class Game
     private GameState    _gameState;      // state of the game
     private ForwardModel _forwardModel;   // rules of the game
 
-    public Game(int maxNumberToGuess, int maxTries)
+    public Game()
     {
         _gameState    = new GameState();
         _forwardModel = new ForwardModel();
-
+    }
+    
+    public void SetMaxNumberToGuess(int maxNumberToGuess)
+    {
         _gameState.SetMaxNumberToGuess(maxNumberToGuess);
+    }
+
+    public void SetMaxTries(int maxTries)
+    {
         _gameState.SetMaxTries(maxTries);
     }
 

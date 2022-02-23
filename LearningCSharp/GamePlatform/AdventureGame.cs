@@ -7,5 +7,4 @@ public class AdventureGame : Game
         _gameState    = new AdventureGameState();
         _forwardModel = new AdventureForwardModel();
     }
-
 }

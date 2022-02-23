@@ -5,20 +5,18 @@ public class Game
     protected iGameState    _gameState;      // state of the game
     protected iForwardModel _forwardModel;   // rules of the game
     
-    public Game()
-    {
-        _gameState    = new iGameState();
-        _forwardModel = new iForwardModel();
-    }
-
-    public void Run(Player player)
+    // Generic Run workflow for all games
+    public void Run(iPlayer player)
     {
         _gameState.Reset();
         while (!_gameState.IsTerminal())
         {
-            Action action = player.Think(_gameState); // player selects an action
-            Console.WriteLine("Player selected action: " + action.ToString());
-            int reward = _forwardModel.Play(_gameState, action); // Play the action
+            Console.WriteLine("\n" + _gameState);                          // Show game state
+            Action action = player.Think(_gameState);                      // player selects an action
+            Console.WriteLine("Player selected: " + action.ToString());    // Show the action played
+            int reward = _forwardModel.Play(_gameState, action);           // Play the action
+            Console.WriteLine(_gameState.GetRewardInformation(reward));    // Show information after action is played
         }
+        Console.WriteLine(_gameState);
     }
 }

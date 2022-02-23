@@ -2,9 +2,11 @@
 
 public class AdventureForwardModel: iForwardModel
 {
+    // Plays the action given the actual state of the game
+    // Updates the state (after playing the action)
     public int Play(iGameState gs, Action a)
     {
-        AdventureGameState ags = (AdventureGameState) gs;
+        AdventureGameState ags = (AdventureGameState) gs;         
         AdventureAction action = (AdventureAction) a;
          
         if      (ags.GetState() == 0 && action.IsU()) ags.SetState(6);
